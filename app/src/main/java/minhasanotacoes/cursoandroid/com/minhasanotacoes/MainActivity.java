@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 while((linhaArquivo = bufferedReader.readLine())!= null){
             /*  enquanto tiver texto no arquivo ele vai fazer a leitura e quando não tiver retorna nulo.
                 Utilizando o bufferedreader, vai ser lido a primeira linha do arquivo e vai ser armazenado em linhaArquivo
-                Quando não exisitir mais linhas para serem  lidas, o bufferedReader.readLine() vai retornar nulo e não vai mais executar o while */
+                Quando não exisitir mais linhas para serem  lidas, o bufferedReader.readLine() vai retornar nulo e não vai mais executar o while  */
 
                     resultado += linhaArquivo;
 
