@@ -48,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
 //    metodo para gravar informações no arquivo de texto
     private void gravarNoArquivo(String texto){
 
@@ -59,16 +57,13 @@ public class MainActivity extends AppCompatActivity {
             outputStreamWriter.write(texto);
             outputStreamWriter.close();
 
-// ioexception é quando vc tenta fazer uma operação de input e output
+//      ioexception é quando vc tenta fazer uma operação de input e output
         }catch(IOException e){
 //          MainActivity é para saber de onde vei o o erro.
             Log.e("MaintActivity",e.toString());
 
 
         }
-
-
-
     }
 
     private String lerArquivo(){
@@ -89,32 +84,26 @@ public class MainActivity extends AppCompatActivity {
             // Gerar Buffer do arquivo lido, recupera as informações do arquivo.
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
-            //Recuperar textos do arquivo - readLine = recupera as linhas salvas no arquivo
-            //     bufferedReader.readLine();
+            /*Recuperar textos do arquivo - readLine = recupera as linhas salvas no arquivo
+                 bufferedReader.readLine(); */
 
-            //enquanto tiver texto no arquivo ele vai fazer a leitura e quando não tiver retorna nulo.
+
                 String linhaArquivo="";
 
-//              Utilizando o bufferedreader, vai ser lido a primeira linha do arquivo e vai ser armazenado em linhaArquivo
-//              Quando não exisitir mais linhas para serem  lidas, o bufferedReader.readLine() vai retornar nulo e não vai mais executar o while
                 while((linhaArquivo = bufferedReader.readLine())!= null){
+            /*  enquanto tiver texto no arquivo ele vai fazer a leitura e quando não tiver retorna nulo.
+                Utilizando o bufferedreader, vai ser lido a primeira linha do arquivo e vai ser armazenado em linhaArquivo
+                Quando não exisitir mais linhas para serem  lidas, o bufferedReader.readLine() vai retornar nulo e não vai mais executar o while */
 
                     resultado += linhaArquivo;
 
                 }
-
                 arquivo.close();
-
             }
-
-
         }catch (IOException e){
 
             Log.v("MainActivity", e.toString());
         }
-
-
-
         return resultado;
 
     }
